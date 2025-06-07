@@ -1,0 +1,13 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["dependencies"]
+
+[dependencies]
+forge-std = "1.9.6"
+"@openzeppelin-contracts" = "5.2.0"
+
+[profile.release]
+optimizer = true
+optimizer_runs = 4294967295
+via_ir = true

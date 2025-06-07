@@ -1,0 +1,43 @@
+[package]
+name = "nxcc-daemon"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.97"
+clap = { version = "4.5.32", features = ["derive"] }
+figment = { version = "0.10.19", features = ["toml", "env"] }
+futures = "0.3.31"
+libp2p = { version = "0.55.0", features = ["tokio", "tcp", "noise", "yamux", "mdns", "identify", "macros", "ping", "kad", "gossipsub"] }
+prost = "0.13.5"
+rand = "0.9.0"
+serde = { version = "1.0.219", features = ["derive"] }
+thiserror = "2.0.12"
+tokio = { version = "1.44.1", features = ["rt-multi-thread", "signal", "macros", "net", "sync", "time", "fs"] }
+tokio-stream = "0.1.17"
+tokio-vsock = { version = "0.7.0", features = ["tonic013"] }
+tonic = { version = "0.13.1", features = ["transport"] }
+tracing = "0.1.41"
+tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
+nxcc-interface = { path = "../interface" }
+tower = "0.5.2"
+hyper-util = "0.1.11"
+ciborium = "0.2.2"
+alloy-primitives = "1.0.0"
+alloy-provider = { version = "1.0.6", default-features = false, features = ["reqwest", "reqwest-rustls-tls", "pubsub", "ws"] }
+alloy-sol-types = { version = "1.0.0", features = ["json"] }
+alloy-transport-http = { version = "1.0.6", features = ["reqwest", "reqwest-rustls-tls"], default-features = false }
+url = "2.5.4"
+alloy-rpc-types = "1.0.6"
+alloy-contract = "1.0.6"
+reqwest = { version = "0.12.15", default-features = false, features = ["json", "rustls-tls"] }
+serde_json = "1.0.140"
+tempfile = "3.19.1"
+base64 = "0.22.1"
+sha2 = "0.10.9"
+percent-encoding = "2.3.1"
+futures-util = "0.3.31"
+axum = "0.8.4"
+
+[dev-dependencies]
+tracing-test = "0.2.5"
